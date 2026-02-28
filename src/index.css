@@ -1,0 +1,33 @@
+@import url('https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Sora", ui-sans-serif, system-ui, sans-serif;
+  --color-pink-50: #fdf8f6;
+  --color-pink-100: #fcece9;
+  --color-pink-200: #fad5ce;
+  --color-pink-300: #f6b5ab;
+  --color-pink-400: #f08a7d;
+  --color-pink-500: #e86352;
+  --color-pink-600: #d64431;
+  --color-pink-700: #b33424;
+  --color-pink-800: #942d21;
+  --color-pink-900: #7a2a20;
+}
+
+body {
+  font-family: 'Sora', sans-serif;
+  background-color: #fafafa;
+  color: #1a1a1a;
+  overflow-x: hidden;
+}
+
+@layer utilities {
+  .hide-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .hide-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+}
