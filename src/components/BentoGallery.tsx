@@ -6,6 +6,7 @@ import img12 from '../assets/WhatsApp Image 2026-03-03 at 12.29.53 (3).jpeg';
 import img13 from '../assets/WhatsApp Image 2026-03-03 at 12.29.53.jpeg';
 import img14 from '../assets/WhatsApp Image 2026-03-03 at 12.33.22 (1).jpeg';
 import img15 from '../assets/WhatsApp Image 2026-03-03 at 12.33.22.jpeg';
+import img16 from '../assets/WhatsApp Image 2026-03-03 at 12.33.23.jpeg';
 
 const galleryItems = [
   {
@@ -27,6 +28,11 @@ const galleryItems = [
     title: "Le cannette insieme",
     description: "Semplicità e complicità.",
     image: img15
+  },
+  {
+    title: "E questo è solo l'inizio...",
+    description: "Insieme a te...",
+    image: img16
   }
 ];
 
