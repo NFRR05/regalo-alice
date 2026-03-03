@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { motion } from 'motion/react';
+import { motion, PanInfo } from 'motion/react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 
 import img7 from '../assets/WhatsApp Image 2026-03-03 at 12.24.22 (4).jpeg';
@@ -57,6 +57,16 @@ export function ReasonsCarousel() {
   const next = () => setCurrentIndex((prev) => (prev + 1) % reasons.length);
   const prev = () => setCurrentIndex((prev) => (prev - 1 + reasons.length) % reasons.length);
 
+  const handleDragEnd = (e: any, { offset }: PanInfo) => {
+    const swipe = offset.x;
+
+    if (swipe < -50) {
+      next();
+    } else if (swipe > 50) {
+      prev();
+    }
+  };
+
   return (
     <section className="py-24 overflow-hidden flex flex-col items-center">
       <motion.h2
@@ -92,8 +102,12 @@ export function ReasonsCarousel() {
           return (
             <motion.div
               key={index}
-              className="absolute w-[80vw] sm:w-[350px] md:w-[450px] h-[400px] md:h-[500px] rounded-[30px] md:rounded-[40px] overflow-hidden shadow-2xl cursor-pointer"
+              className="absolute w-[80vw] sm:w-[350px] md:w-[450px] h-[400px] md:h-[500px] rounded-[30px] md:rounded-[40px] overflow-hidden shadow-2xl cursor-pointer touch-pan-y"
               initial={false}
+              drag="x"
+              dragConstraints={{ left: 0, right: 0 }}
+              dragElastic={0.2}
+              onDragEnd={handleDragEnd}
               animate={{
                 x: `${xOffset}%`,
                 scale,
