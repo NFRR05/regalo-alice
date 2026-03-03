@@ -2,6 +2,12 @@ import { useState } from 'react';
 import { motion } from 'motion/react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 
+import img7 from '../assets/WhatsApp Image 2026-03-03 at 12.24.22 (4).jpeg';
+import img8 from '../assets/WhatsApp Image 2026-03-03 at 12.24.22.jpeg';
+import img9 from '../assets/WhatsApp Image 2026-03-03 at 12.29.52.jpeg';
+import img10 from '../assets/WhatsApp Image 2026-03-03 at 12.29.53 (1).jpeg';
+import img11 from '../assets/WhatsApp Image 2026-03-03 at 12.29.53 (2).jpeg';
+
 const reasons = [
   {
     title: "IL TUO SORRISO",
@@ -9,7 +15,7 @@ const reasons = [
       { value: "100%", label: "ILLUMINA LA MIA GIORNATA" },
       { value: "Infinito", label: "LA GIOIA CHE MI DAI" }
     ],
-    image: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=1000&auto=format&fit=crop"
+    image: img7
   },
   {
     title: "LA TUA DOLCEZZA",
@@ -17,7 +23,7 @@ const reasons = [
       { value: "Unica", label: "COME IL TUO MODO DI FARE" },
       { value: "Sempre", label: "MI FAI SENTIRE AMATO" }
     ],
-    image: "https://images.unsplash.com/photo-1517841905240-472988babdf9?q=80&w=1000&auto=format&fit=crop"
+    image: img8
   },
   {
     title: "LA TUA FORZA",
@@ -25,7 +31,7 @@ const reasons = [
       { value: "Ispirazione", label: "PER ME OGNI GIORNO" },
       { value: "Coraggio", label: "NELL'AFFRONTARE LA VITA" }
     ],
-    image: "https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?q=80&w=1000&auto=format&fit=crop"
+    image: img9
   },
   {
     title: "I TUOI OCCHI",
@@ -33,7 +39,7 @@ const reasons = [
       { value: "Profondi", label: "COME L'OCEANO" },
       { value: "Sinceri", label: "IN CUI MI PERDO" }
     ],
-    image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=1000&auto=format&fit=crop"
+    image: img10
   },
   {
     title: "NOI DUE",
@@ -41,7 +47,7 @@ const reasons = [
       { value: "Insieme", label: "SIAMO PIÙ FORTI" },
       { value: "Per sempre", label: "IL MIO POSTO PREFERITO" }
     ],
-    image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?q=80&w=1000&auto=format&fit=crop"
+    image: img11
   }
 ];
 
@@ -53,7 +59,7 @@ export function ReasonsCarousel() {
 
   return (
     <section className="py-24 overflow-hidden flex flex-col items-center">
-      <motion.h2 
+      <motion.h2
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, margin: "-50px" }}
@@ -62,8 +68,8 @@ export function ReasonsCarousel() {
       >
         Per Te
       </motion.h2>
-      
-      <motion.div 
+
+      <motion.div
         initial={{ opacity: 0, scale: 0.95 }}
         whileInView={{ opacity: 1, scale: 1 }}
         viewport={{ once: true, margin: "-50px" }}
@@ -99,16 +105,16 @@ export function ReasonsCarousel() {
             >
               <img src={reason.image} alt={reason.title} className="absolute inset-0 w-full h-full object-cover" />
               <div className="absolute inset-0 bg-black/20" />
-              
+
               {isCenter && (
-                <motion.div 
+                <motion.div
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   transition={{ delay: 0.2 }}
                   className="absolute inset-0 p-6 md:p-8 flex flex-col justify-between text-white"
                 >
                   <h3 className="text-2xl md:text-4xl font-medium tracking-tight uppercase">{reason.title}</h3>
-                  
+
                   <div className="space-y-4 md:space-y-6 max-w-[75%] md:max-w-[60%]">
                     {reason.stats.map((stat, i) => (
                       <div key={i}>
@@ -128,7 +134,7 @@ export function ReasonsCarousel() {
         })}
       </motion.div>
 
-      <motion.div 
+      <motion.div
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, margin: "-50px" }}
@@ -140,8 +146,8 @@ export function ReasonsCarousel() {
         </button>
         <div className="flex gap-2">
           {reasons.map((_, i) => (
-            <div 
-              key={i} 
+            <div
+              key={i}
               className={`h-1.5 rounded-full transition-all duration-300 ${i === currentIndex ? 'w-6 bg-black' : 'w-1.5 bg-black/30'}`}
             />
           ))}

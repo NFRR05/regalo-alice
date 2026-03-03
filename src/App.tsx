@@ -11,7 +11,7 @@ import { Footer } from './components/Footer';
 
 export default function App() {
   return (
-    <main className="bg-[#fafafa] min-h-screen">
+    <main className="bg-[#fafafa] min-h-screen overflow-x-clip">
       <Hero />
       <ReasonsCarousel />
       <BentoGallery />
