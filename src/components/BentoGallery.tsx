@@ -30,8 +30,8 @@ const galleryItems = [
     image: img15
   },
   {
-    title: "E questo è solo l'inizio...",
-    description: "Insieme a te...",
+    title: "Solo un inizio...",
+    description: "...Insieme a te!",
     image: img16
   }
 ];
