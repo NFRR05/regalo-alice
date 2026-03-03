@@ -9,23 +9,23 @@ import img15 from '../assets/WhatsApp Image 2026-03-03 at 12.33.22.jpeg';
 
 const galleryItems = [
   {
-    title: "Il nostro primo viaggio",
-    description: "Ricordi indelebili e risate infinite esplorando nuove città mano nella mano.",
+    title: "Vacanza in Albania",
+    description: "Orizzonti nuovi e scoperte.",
     image: img12
   },
   {
-    title: "Cene romantiche",
-    description: "I nostri posti preferiti, candele e sguardi che dicono più di mille parole.",
+    title: "Estate in Corsica",
+    description: "Il blu del mare.",
     image: img13
   },
   {
-    title: "Avventure nella natura",
-    description: "Passeggiate, tramonti mozzafiato e la pace di stare semplicemente insieme.",
+    title: "Lago d'Iseo",
+    description: "La nostra fuga perfetta.",
     image: img14
   },
   {
-    title: "Momenti di relax",
-    description: "Le domeniche pigre sul divano, i film e le coccole senza fine.",
+    title: "Le cannette insieme",
+    description: "Semplicità e complicità.",
     image: img15
   }
 ];

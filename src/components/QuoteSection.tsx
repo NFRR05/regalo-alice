@@ -1,16 +1,16 @@
 import { motion, useScroll, useTransform, MotionValue } from 'motion/react';
 import { useRef, ReactNode } from 'react';
 
-function AnimatedCharacter({ 
-  char, 
-  progress, 
-  start, 
-  end 
-}: { 
-  char: ReactNode; 
-  progress: MotionValue<number>; 
-  start: number; 
-  end: number; 
+function AnimatedCharacter({
+  char,
+  progress,
+  start,
+  end
+}: {
+  char: ReactNode;
+  progress: MotionValue<number>;
+  start: number;
+  end: number;
 }) {
   const opacity = useTransform(progress, [start, end], [0.1, 1]);
   return <motion.span style={{ opacity }} className="inline-block">{char}</motion.span>;
@@ -18,7 +18,7 @@ function AnimatedCharacter({
 
 export function QuoteSection() {
   const containerRef = useRef<HTMLDivElement>(null);
-  
+
   // Track scroll progress through the container
   const { scrollYProgress } = useScroll({
     target: containerRef,
@@ -28,11 +28,12 @@ export function QuoteSection() {
 
   // The full text split into words and icons
   const tokens = [
-    "Sei", "la", "persona", "più", "incredibile", "che", "io", "conosca.", 
-    "Ogni", "giorno", "con", "te", 
-    { isIcon: true, element: <div className="w-8 h-8 md:w-12 md:h-12 rounded-full bg-pink-400 inline-block align-middle mx-1 -mt-2" /> }, 
-    "è", "una", "magia,", "una", "scoperta", "continua,", "e", "un", "amore", "che", "cresce", "sempre", "di", "più.",
-    { isIcon: true, element: <div className="w-8 h-8 md:w-12 md:h-12 rounded-full bg-orange-400 inline-block align-middle mx-1 -mt-2" /> }
+    "Dal", "29", "giugno", "2024", "ogni", "giorno", "è", "speciale.",
+    "Amo", "la", "tua", "determinazione,", "la", "tua", "dolcezza", "e", "il", "tuo", "sorriso.",
+    { isIcon: true, element: <div className="w-8 h-8 md:w-12 md:h-12 rounded-full bg-pink-400 inline-block align-middle mx-1 -mt-2" /> },
+    "Sarò", "sempre", "il", "tuo", "porto", "sicuro", "e", "il", "tuo", "primo", "sostenitore.",
+    { isIcon: true, element: <div className="w-8 h-8 md:w-12 md:h-12 rounded-full bg-orange-400 inline-block align-middle mx-1 -mt-2" /> },
+    "Sei", "il", "mio", "regalo", "più", "grande."
   ];
 
   // Calculate total characters for staggering
@@ -44,14 +45,14 @@ export function QuoteSection() {
   let globalCharIndex = 0;
 
   return (
-    // The container is very tall (300vh) to allow for a long scrolling duration
-    <section ref={containerRef} className="h-[300vh] relative">
-      
+    // The container is shorter to allow for a faster scrolling duration
+    <section ref={containerRef} className="h-[200vh] relative">
+
       {/* The sticky content that stays in view while scrolling */}
       <div className="sticky top-0 h-screen w-full flex flex-col items-center justify-center px-4 overflow-hidden">
-        
-        <div className="max-w-5xl mx-auto text-center">
-          <h2 className="text-4xl md:text-6xl lg:text-7xl font-medium tracking-tight text-[#1A1A1A] leading-[1.2] flex flex-wrap justify-center gap-x-3 gap-y-2 md:gap-y-4">
+
+        <div className="max-w-4xl mx-auto text-center">
+          <h2 className="text-3xl md:text-5xl lg:text-6xl font-medium tracking-tight text-[#1A1A1A] leading-[1.2] flex flex-wrap justify-center gap-x-3 gap-y-2 md:gap-y-4">
             {tokens.map((token, wordIndex) => {
               if (typeof token === 'string') {
                 const chars = Array.from(token);
@@ -61,14 +62,14 @@ export function QuoteSection() {
                       const currentGlobalIndex = globalCharIndex++;
                       const start = (currentGlobalIndex / totalChars) * 0.8;
                       const end = start + (1 / totalChars) * 0.8;
-                      
+
                       return (
-                        <AnimatedCharacter 
-                          key={charIndex} 
-                          char={char} 
-                          progress={scrollYProgress} 
-                          start={start} 
-                          end={end} 
+                        <AnimatedCharacter
+                          key={charIndex}
+                          char={char}
+                          progress={scrollYProgress}
+                          start={start}
+                          end={end}
                         />
                       );
                     })}
@@ -79,14 +80,14 @@ export function QuoteSection() {
                 const currentGlobalIndex = globalCharIndex++;
                 const start = (currentGlobalIndex / totalChars) * 0.8;
                 const end = start + (1 / totalChars) * 0.8;
-                
+
                 return (
                   <span key={wordIndex} className="inline-block whitespace-nowrap">
-                    <AnimatedCharacter 
-                      char={token.element} 
-                      progress={scrollYProgress} 
-                      start={start} 
-                      end={end} 
+                    <AnimatedCharacter
+                      char={token.element}
+                      progress={scrollYProgress}
+                      start={start}
+                      end={end}
                     />
                   </span>
                 );
@@ -94,7 +95,7 @@ export function QuoteSection() {
             })}
           </h2>
         </div>
-        
+
       </div>
     </section>
   );

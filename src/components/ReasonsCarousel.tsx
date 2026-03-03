@@ -26,20 +26,20 @@ const reasons = [
     image: img8
   },
   {
-    title: "LA TUA FORZA",
-    stats: [
-      { value: "Ispirazione", label: "PER ME OGNI GIORNO" },
-      { value: "Coraggio", label: "NELL'AFFRONTARE LA VITA" }
-    ],
-    image: img9
-  },
-  {
     title: "I TUOI OCCHI",
     stats: [
       { value: "Profondi", label: "COME L'OCEANO" },
       { value: "Sinceri", label: "IN CUI MI PERDO" }
     ],
     image: img10
+  },
+  {
+    title: "LA TUA DETERMINAZIONE",
+    stats: [
+      { value: "Ispirazione", label: "PER ME OGNI GIORNO" },
+      { value: "Coraggio", label: "NELL'AFFRONTARE LA VITA" }
+    ],
+    image: img9
   },
   {
     title: "NOI DUE",

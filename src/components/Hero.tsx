@@ -133,8 +133,8 @@ export function Hero() {
           {/* Bottom Content Overlay */}
           <div className="absolute bottom-0 left-0 w-full p-6 md:p-10 flex flex-col md:flex-row justify-between items-start md:items-end gap-6 text-white">
             <div className="max-w-2xl">
-              <h1 className="text-3xl md:text-5xl lg:text-6xl font-medium tracking-tight mb-6">
-                Il nostro viaggio insieme.
+              <h1 className="text-3xl md:text-5xl lg:text-6xl font-medium tracking-tight mb-2">
+                Dal banco di scuola a noi.
               </h1>
               <button className="border border-white rounded-full px-6 py-2.5 text-xs font-bold tracking-widest uppercase hover:bg-white hover:text-black transition-colors pointer-events-auto">
                 Scopri di più
